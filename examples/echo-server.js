@@ -71,7 +71,9 @@ server.addListener("listening", function(){
 server.addListener("connection", function(conn){
   log("opened connection: "+conn.id);
   
-  server.send(conn.id, "Connected as: "+conn.id);
+  // server.send(conn.id, "Connected as: "+conn.id);
+  server.send(conn.id, "Just another nugget of wisdom!" + conn.id);
+  
   conn.broadcast("<"+conn.id+"> connected");
   
   conn.addListener("message", function(message){
